@@ -1,0 +1,12 @@
+button {
+    margin: 10px;
+    width: 150px;
+    height: 40px;
+}
+.btn{    
+    margin: 10px;
+    width: 150px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+}
