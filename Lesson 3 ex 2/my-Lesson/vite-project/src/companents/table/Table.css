@@ -1,0 +1,12 @@
+th:first-child {
+    width: 20px;
+}
+th {
+    border: 5px black solid;
+}
+td {
+    border: 5px black solid;
+}
+table {
+    border-collapse: collapse;
+}
