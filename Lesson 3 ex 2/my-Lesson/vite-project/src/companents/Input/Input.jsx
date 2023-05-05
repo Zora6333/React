@@ -1,20 +1,24 @@
-import { useState } from "react";
-import "./Input.css";
+import React from "react";
+import './Input.css'
 
-export const Input = (props) => {
+const Input = (props) => {
   return (
-    <div>
+    <div className="Write">
       <input
-        value={props.value}
-        onChange={props.onChange}
-        placeholder={props.placeholder}
+        type="text"
+        value={props.value1}
+        onChange={(event) => props.onChange1(event.target.value)}
+        placeholder={props.placeholder1}
       />
-      
+
       <input
-        value={props.value}
-        onChange={props.onChange}
-        placeholder={props.placeholder}
+        type="text"
+        value={props.value2}
+        onChange={(event) => props.onChange2(event.target.value)}
+        placeholder={props.placeholder2}
       />
     </div>
   );
 };
+
+export default Input;

@@ -1,0 +1,13 @@
+button {
+    margin: 10px;
+    width: 150px;
+    height: 40px;
+}
+.btn{
+    padding: 50px;    
+    margin: 10px;
+    width: 150px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+}
