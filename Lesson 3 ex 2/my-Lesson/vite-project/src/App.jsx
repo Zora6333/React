@@ -12,7 +12,9 @@ function App() {
       <Input />
       <Button />
       <Table />
-      <div className="inVal"></div>
+      <div className="inVal">
+        <div id="preloader" class='visible'></div>
+      </div>
     </>
   );
 }

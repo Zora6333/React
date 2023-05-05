@@ -9,7 +9,7 @@ export const Input = (props) => {
         onChange={props.onChange}
         placeholder={props.placeholder}
       />
-
+      
       <input
         value={props.value}
         onChange={props.onChange}

@@ -17,6 +17,18 @@ function Table() {
     posts.map((item) => createElement(tr));
   }
 
+  function loadData() {
+  return new Promis((resolve, reject) => {
+  setTimeout(resolve, 2000);
+})}
+ loadData()
+ .then(() => {
+  let preloaderEl = document.getElementById('preloader');
+  preloaderEl.classList.add('hiden')
+  preloaderEl.classList.remove('visible');
+ })
+}
+
   return (
     <table>
       <thead>
