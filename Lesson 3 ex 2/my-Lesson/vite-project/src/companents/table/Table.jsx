@@ -2,7 +2,6 @@ import React, { createElement, useEffect, useState } from "react";
 import axios from "axios";
 import "./Table.css";
 
-
 function Table() {
   const [posts, setPosts] = useState([]);
 
@@ -31,32 +30,55 @@ function Table() {
       </thead>
       <tbody>
         <tr>
-         
-            {posts.map((item) => ( 
-            <td key={item.userId}>
-               {item.id}
-            </td> ))}
-         
+          {posts.map((item) => (
+            <td key={item.userId}>{item.id}</td>
+          ))}
+          {posts.map((item) => (
+            <td key={item.userName}>{item.name}</td>
+          ))}
+          {posts.map((item) => (
+            <td key={item.userUserName}>{item.userName}</td>
+          ))}
+                    {posts.map((item) => (
+            <td key={item.userEmail}>{item.email}</td>
+          ))}
+                    {posts.map((item) => (
+            <td key={item.userAdress}>{item.adress}</td>
+          ))}
         </tr>
         <tr>
-        {posts.map((item) => ( 
-            <td key={item.userId}>
-               {item.id}
-            </td> ))}
-          <td>Row 2, Column 2</td>
-          <td>Row 2, Column 3</td>
-          <td>Row 2, Column 4</td>
-          <td>Row 2, Column 5</td>
+          {posts.map((item) => (
+            <td key={item.userId}>{item.id}</td>
+          ))}
+          {posts.map((item) => (
+            <td key={item.userName}>{item.name}</td>
+          ))}
+          {posts.map((item) => (
+            <td key={item.userUserName}>{item.userName}</td>
+          ))}
+          {posts.map((item) => (
+            <td key={item.userEmail}>{item.email}</td>
+          ))}
+          {posts.map((item) => (
+            <td key={item.userAdress}>{item.adress}</td>
+          ))}
         </tr>
         <tr>
-        {posts.map((item) => ( 
-            <td key={item.userId}>
-               {item.id}
-            </td> ))}
-          <td>Row 3, Column 2</td>
-          <td>Row 3, Column 3</td>
-          <td>Row 3, Column 4</td>
-          <td>Row 3, Column 5</td>
+          {posts.map((item) => (
+            <td key={item.userId}>{item.id}</td>
+          ))}
+          {posts.map((item) => (
+            <td key={item.userName}>{item.name}</td>
+          ))}
+          {posts.map((item) => (
+            <td key={item.userUserName}>{item.userName}</td>
+          ))}
+          {posts.map((item) => (
+            <td key={item.userEmail}>{item.email}</td>
+          ))}
+          {posts.map((item) => (
+            <td key={item.userAdress}>{item.adress}</td>
+          ))}
         </tr>
         <tr>
           <td className="App">
@@ -64,10 +86,18 @@ function Table() {
               <div key={item.userId}>{item.id};</div>
             ))}
           </td>
-          <td>Row 4, Column 2</td>
-          <td>Row 4, Column 3</td>
-          <td>Row 4, Column 4</td>
-          <td>Row 4, Column 5</td>
+          {posts.map((item) => (
+            <td key={item.userName}>{item.name}</td>
+          ))}
+          {posts.map((item) => (
+            <td key={item.userUserName}>{item.userName}</td>
+          ))}
+          {posts.map((item) => (
+            <td key={item.userEmail}>{item.email}</td>
+          ))}
+          {posts.map((item) => (
+            <td key={item.userAdress}>{item.adress}</td>
+          ))}
         </tr>
       </tbody>
     </table>
