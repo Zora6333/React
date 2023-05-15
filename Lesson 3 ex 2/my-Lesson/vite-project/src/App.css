@@ -4,7 +4,18 @@
   padding: 2rem;
   text-align: center;
 }
-
+.inVal{
+  display: flex;
+  justify-content: center;
+}
+.Clean{
+  display:flex;
+  justify-content: center;
+}
+.buttons {
+  display: flex;
+  justify-content: center;
+}
 .logo {
   height: 6em;
   padding: 1.5em;

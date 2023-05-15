@@ -15,11 +15,13 @@ function App() {
   const [inputSearch, setInputSearch] = useState("");
   const [elements, setElements] = useState([]);
   const [elementsWithSearch, setElementsWithSearch] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios("https://jsonplaceholder.typicode.com/users");
       setElements(result.data);
+      setIsLoading(false);
     };
     fetchData();
   }, []);
@@ -27,11 +29,9 @@ function App() {
   const reset = () => {
     setInputOne("");
     setInputTwo("");
-    setInputEmail("")
-    setInputAddress("")
+    setInputEmail("");
+    setInputAddress("");
   };
-
- 
 
   const addToDo = () => {
     setElements((prevState) => [
@@ -39,7 +39,11 @@ function App() {
         name: inputOne,
         username: inputTwo,
         email: inputEmail,
-        address:  inputAddress
+        address: {
+          city: inputAddress,
+          street: inputAddress,
+          suite: inputAddress,
+        },
       },
       ...prevState,
     ]);
@@ -47,8 +51,8 @@ function App() {
     // Clear form inputs
     setInputOne("");
     setInputTwo("");
-    setInputEmail("")
-    setInputAddress("")
+    setInputEmail("");
+    setInputAddress("");
   };
 
   const sortElements = (event) => {
@@ -56,8 +60,14 @@ function App() {
 
     if (elements.length) {
       setElementsWithSearch(
-        elements.filter((element) =>
-          element.task.toLowerCase().includes(event.target.value.toLowerCase())
+        elements.filter(
+          (element) =>
+            element.name
+              .toLowerCase()
+              .includes(event.target.value.toLowerCase()) ||
+            element.username
+              .toLowerCase()
+              .includes(event.target.value.toLowerCase())
         )
       );
     }
@@ -65,6 +75,17 @@ function App() {
 
   return (
     <>
+      <div>
+        {isLoading ? (
+          <img src="./src/companents/Loading/XOsX.gif" alt="loading..." /> // здесь путь к вашей гифке загрузки
+        ) : (
+          <ul>
+            {elements.map((element) => (
+              <div key={element.id}> </div>
+            ))}
+          </ul>
+        )}
+      </div>
       <div className="inVal">
         <Input
           type="text"
@@ -75,7 +96,7 @@ function App() {
         <Input
           type="text"
           value={inputTwo}
-          onChange={(event) => setInputTwo(event.target.value)}
+          onChange={(event) => setInputTwo(event.target.value)} // Обновлено с setInputOne() на setInputTwo()
           placeholder="LastName"
         />
         <Input
@@ -97,27 +118,12 @@ function App() {
           placeholder="Search"
         />
       </div>
-      <Btn onClick={reset} />
-      <BtnTodo onClick={addToDo} />
+      <div className="buttons">
+        <Btn onClick={reset} />
+        <BtnTodo onClick={addToDo} />
+      </div>
       <div className="todo">
-        {inputSearch
-          ? elementsWithSearch.map((element) => (
-              <div key={element.name} className="name">
-                <ToDo>
-                  {element.name}
-                  {element.username}
-                </ToDo>
-              </div>
-            ))
-          : elements.map((element) => (
-              <div key={element.name} className="name">
-                <ToDo>
-                  {element.name}
-                  {element.username}
-                </ToDo>
-              </div>
-            ))}
-        <Table posts={elements} />
+        <Table posts={inputSearch ? elementsWithSearch : elements} />
       </div>
     </>
   );
