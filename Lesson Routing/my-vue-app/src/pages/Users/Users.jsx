@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
+import '../Users/Users.css'
+
 const Users = () => {
   // Declare state variables
   const [users, setUsers] = useState([]);
@@ -15,7 +17,7 @@ const Users = () => {
   }, []);
 
   return (
-    <div>
+    <div className='Users'>
       <h1>Users Page</h1>
       {/* Iterate over users and display their names */}
       {users.map(user => (
