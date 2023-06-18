@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .Greeting {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    height: 300px;
+    top: 5%;
+    background-image: url(./56054-prostranstvo-pautina-uzor-liniya-cifrovoe_iskusstvo-1920x1080-1.jpg);
+  }
+  h1 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: aliceblue;
+  }
+  p {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: aliceblue;
+  }

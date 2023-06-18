@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .Team{
+    display: flex;
+    flex-direction: row;
+    padding-top: 30px;
+    background-color: black ;
+height: 300px;
+width: 100%;
+justify-content: space-around;
+  }
+  .Team p {
+    padding-bottom: 10px;
+  }
+  .Team img {
+    border-radius: 100px; /* Радиус скругления */
+    border: 3px solid green; /* Параметры рамки */
+    box-shadow: 0 0 7px #666; /* Параметры тени */
+  }
+  .Team a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: space-between;
+  }
