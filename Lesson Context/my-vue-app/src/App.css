@@ -9,6 +9,9 @@
   justify-content: space-around;
   width: 600px;
 }
+li {
+  list-style-type: none;
+}
 
 @keyframes logo-spin {
   from {

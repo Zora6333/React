@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-
+import '../User/User.css'
 function User() {
   const { id } = useParams();
   const [user, setUser] = useState(null);
@@ -12,7 +12,7 @@ function User() {
   }, [id]);
 
   return (
-    <div>
+    <div className='Page'> 
       {user ? (
         <>
           <h1>User Details for user ID: {id}</h1>
