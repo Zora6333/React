@@ -6,7 +6,7 @@ import User from './pages/User/User';
 import NotFound from './pages/NotFound/NotFound';
 import Layout from './components/Layout/Layout'
 import AboutUs from './pages/AboutUs/AboutUs'
-
+import "../src/App.css"
 const App = () => {
   return (
     
